@@ -1,0 +1,57 @@
+.MAIN__APP {
+  width: 400px;
+  max-width: 90%;
+  margin: auto;
+}
+.todos__wrapper {
+  margin-top: 20px;
+}
+.one__todo__wrapper {
+  margin: 2px 0px;
+  display: flex;
+  align-items: center;
+}
+.one__todo__content {
+  flex-grow: 1;
+}
+.one__todo__actions {
+  width: 140px;
+  text-align: center;
+  justify-self: flex-end;
+}
+/* =================================== */
+/* ========== UI ELEMENTS =========== */
+/* =================================== */
+button {
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+.button__edit {
+  background-color: rgb(236, 173, 55);
+  border: 1px solid rgb(226, 174, 31);
+}
+.button__delete {
+  background-color: rgb(226, 31, 31);
+  border: 1px solid rgb(160, 14, 14);
+  color: rgb(233, 233, 233);
+}
+.button__add__todo {
+  background-color: rgb(5, 216, 5);
+  border: 1px solid green;
+}
+/* =================================== */
+/* ======== GENERAL STYLES =========== */
+/* =================================== */
+.text__center {
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 4px 2px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  border: 1px solid grey;
+}
+h3 {
+  margin: 0;
+}
