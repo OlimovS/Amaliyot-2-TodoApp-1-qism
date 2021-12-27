@@ -19,6 +19,36 @@
   text-align: center;
   justify-self: flex-end;
 }
+
+.edit__modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  border: 1px solid grey;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgba(63, 63, 63, 0.269);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__content {
+  position: relative;
+  padding: 30px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.modal__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 8px;
+}
+
 /* =================================== */
 /* ========== UI ELEMENTS =========== */
 /* =================================== */
@@ -35,6 +65,7 @@ button {
   border: 1px solid rgb(160, 14, 14);
   color: rgb(233, 233, 233);
 }
+.button__edit__todo,
 .button__add__todo {
   background-color: rgb(5, 216, 5);
   border: 1px solid green;
