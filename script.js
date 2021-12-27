@@ -24,7 +24,7 @@ const state = [];
 // ====================================================
 todoForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const todoText = todoInput.value.trim();
+  const todoText = keepOnlyPlainTodoText(todoInput.value.trim());
   todoInput.value = "";
   event.preventDefault();
   // validation
@@ -38,7 +38,7 @@ todoForm.addEventListener("submit", function (event) {
 
 todoEditForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const todoText = todoEditInput.value.trim();
+  const todoText = keepOnlyPlainTodoText(todoEditInput.value.trim());
   // todoId string bo'lgani uchun + qoyib number tipiga o'tkazdim
   const todoId = +todoEditInput.dataset.todoId;
   todoInput.value = "";
@@ -100,9 +100,8 @@ const drawUIByState = () => {
 };
 
 const showEditModal = (todoText, todoId) => {
-  const safeTodoText = keepOnlyPlainTodoText(todoText);
   editModal.style.display = "flex";
-  todoEditInput.value = safeTodoText;
+  todoEditInput.value = todoText;
   todoEditInput.dataset.todoId = todoId;
 };
 
