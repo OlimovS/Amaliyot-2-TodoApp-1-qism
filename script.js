@@ -75,10 +75,23 @@ const makeID = (state) => {
   return state[state.length - 1].id + 1;
 };
 
+const keepOnlyPlainTodoText = (inputTodoText) => {
+  const safeInputTodoText = filterXSS(inputTodoText, {
+    whiteList: [], // empty, means filter out all tags
+    stripIgnoreTag: true, // filter out all HTML not in the whilelist
+    stripIgnoreTagBody: ["script"], // the script tag is a special case, we need
+    // to filter out its content
+  });
+
+  return safeInputTodoText;
+};
+
 const makeOneTodoHtmlContent = (todo, todoNumber) => {
+  const safeTodoText = keepOnlyPlainTodoText(todo.text);
+
   const todoContent = `<div class="one__todo__wrapper">
     <div class="one__todo__content">
-      <h3>${todoNumber}. ${todo.text}</h3>
+      <h3>${todoNumber}. ${safeTodoText}</h3>
     </div>
     <div class="one__todo__actions">
       <button class="button__edit">Edit</button>
