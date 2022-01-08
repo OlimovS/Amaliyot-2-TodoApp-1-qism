@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/loader.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/js-xss/0.3.3/xss.min.js"
       integrity="sha512-M9w45qyI/KVHcxTODUsdwWip284UJBj2e6st1Ub6tXXO4nJAP3aIVN2Wkgd15CmJL6eJRFBSUssVyKtZX1v1Fg=="
@@ -45,6 +46,14 @@
         </section>
       </div>
     </div>
+    <div
+      class="spinner-border text-primary loader-custom-css"
+      style="display: none"
+      role="status"
+      id="loader"
+    >
+      <span class="visually-hidden">Loading...</span>
+    </div>
 
     <!--  XSS ATTACKS  -->
     <!--
@@ -73,6 +82,10 @@
     
     <script>console.log("Malicious code");</script>
    -->
-    <script src="script.js"></script>
+    <script src="/scripts/dom-selectors.js"></script>
+    <script src="/scripts/utilities.js"></script>
+    <script src="/scripts/api.js"></script>
+    <script src="/scripts/handlers.js"></script>
+    <script src="/scripts/script.js"></script>
   </body>
 </html>
