@@ -84,30 +84,31 @@ class App {
     });
   }
 
-  _updateTodos() {
-    ui.showLoader();
-    api.updateTodos(this.store.state).then(() => {
-      ui.drawTodosUI(this.store.state);
-      ui.hideLoader();
-    });
-  }
-
   addTodo(todoText) {
     this.store.addTodo(todoText);
     // UI and Api related
-    this._updateTodos();
+    this.onChangeTodos();
   }
+
   updateTodo(todoText, todoId) {
     this.store.updateTodo(todoText, todoId);
     // UI and Api related
-    this._updateTodos();
+    this.onChangeTodos();
     ui.hideEditModal();
   }
 
   deleteTodo(id) {
     this.store.deleteTodo(id);
     // UI and Api related
-    this._updateTodos();
+    this.onChangeTodos();
+  }
+
+  onChangeTodos() {
+    ui.showLoader();
+    api.updateTodos(this.store.state).then(() => {
+      ui.drawTodosUI(this.store.state);
+      ui.hideLoader();
+    });
   }
 }
 
