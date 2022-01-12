@@ -1,5 +1,5 @@
 .MAIN__APP {
-  width: 400px;
+  width: 430px;
   max-width: 90%;
   margin: auto;
 }
@@ -15,7 +15,7 @@
   flex-grow: 1;
 }
 .one__todo__actions {
-  width: 140px;
+  width: 180px;
   text-align: center;
   justify-self: flex-end;
 }
@@ -70,6 +70,31 @@ button {
   background-color: rgb(5, 216, 5);
   border: 1px solid green;
 }
+
+.modal__close,
+.button__edit__todo,
+.button__add__todo,
+.button__edit,
+.button__delete {
+  cursor: pointer;
+}
+
+.completed__icon__wrapper,
+.uncompleted__icon__wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0px 2px;
+  cursor: pointer;
+}
+
+.uncompleted__icon__wrapper {
+  color: rgb(221, 30, 30);
+}
+
+.completed__icon__wrapper {
+  color: rgb(5, 216, 5);
+}
+
 /* =================================== */
 /* ======== GENERAL STYLES =========== */
 /* =================================== */

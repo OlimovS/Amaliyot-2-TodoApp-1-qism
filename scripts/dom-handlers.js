@@ -31,6 +31,10 @@ todoEditForm.addEventListener("submit", function (event) {
   app.updateTodo(todoText, todoId);
 });
 
+editModalCloseBtn.addEventListener("click", function () {
+  ui.hideEditModal();
+});
+
 // ====================================================
 // =============        Funksiyalar        ============
 // ====================================================
@@ -42,4 +46,8 @@ const handleDeleteTodo = (id) => {
 const handleEditTodo = (id) => {
   const todo = app.state.find((elem) => elem.id === id);
   ui.showEditModal(todo.text, id);
+};
+
+const handleCompleteTodo = (id) => {
+  app.toggleCompleteTodo(id);
 };

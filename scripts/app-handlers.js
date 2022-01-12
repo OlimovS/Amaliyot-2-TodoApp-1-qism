@@ -63,6 +63,12 @@ class Store {
     const idx = this.state.findIndex((todo) => todo.id === id);
     this.state.splice(idx, 1);
   }
+
+  toggleCompleteTodo(id) {
+    const index = this.state.findIndex((todo) => todo.id === id);
+
+    this.state[index].completed = !this.state[index].completed;
+  }
 }
 
 class App {
@@ -86,20 +92,26 @@ class App {
 
   addTodo(todoText) {
     this.store.addTodo(todoText);
-    // UI and Api related
+
     this.onChangeTodos();
   }
 
   updateTodo(todoText, todoId) {
     this.store.updateTodo(todoText, todoId);
-    // UI and Api related
+
     this.onChangeTodos();
     ui.hideEditModal();
   }
 
   deleteTodo(id) {
     this.store.deleteTodo(id);
-    // UI and Api related
+
+    this.onChangeTodos();
+  }
+
+  toggleCompleteTodo(id) {
+    this.store.toggleCompleteTodo(id);
+
     this.onChangeTodos();
   }
 
